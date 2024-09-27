@@ -1,11 +1,72 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
-
+import vue from '@vitejs/plugin-vue';
+ 
 export default defineConfig({
+
+    //base: process.env.CDN_URL || '/', // Set the base URL for all built assets
+
+    build: {
+        minify: true, // Pending. Disable minification to make debugging easier
+        target: 'esnext',
+        chunkSizeWarningLimit: 2048,
+    },
+    
     plugins: [
-        laravel({
-            input: ['resources/css/app.css', 'resources/js/app.js'],
-            refresh: true,
+        laravel([
+            'resources/vue/assets/js/bootstrap.js',
+            'resources/vue/assets/js/vue.js',
+            'resources/vue/assets/css/app.css'
+        ]),
+        vue({
+            template: {
+                compilerOptions: {
+                    isCustomElement: tag => {
+                        const customElements = [
+                            'swiper-',
+                            'ion-',
+                        ];
+                        return customElements.some(element => tag.startsWith(element));
+                    }
+                },
+    
+                transformAssetUrls: {
+    
+                    // The Vue plugin will re-write asset URLs, when referenced
+                    // in Single File Components, to point to the Laravel web
+                    // server. Setting this to `null` allows the Laravel plugin
+                    // to instead re-write asset URLs to point to the Vite
+                    // server instead.
+                    base: null,
+ 
+                    // The Vue plugin will parse absolute URLs and treat them
+                    // as absolute paths to files on disk. Setting this to
+                    // `false` will leave absolute URLs un-touched so they can
+                    // reference assets in the public directory as expected.
+                    includeAbsolute: false,
+                },
+            },
         }),
     ],
+
+    resolve: {
+        alias: {
+            '@': '/resources',
+            '@app': '/resources/vue/app',
+            '@components': '/resources/vue/app/components',
+            '@modules': '/resources/vue/app/modules',
+            '@sections': '/resources/vue/app/sections',
+            '@themes': '/resources/vue/app/themes',
+            '@vuex': '/resources/vue/app/vuex',
+            '@assets': '/resources/vue/assets',
+            '@css': '/resources/vue/assets/css',
+            '@js': '/resources/vue/assets/js',
+            '@json': '/resources/vue/assets/json',
+            '@plugins': '/resources/vue/assets/plugins',
+            '@router': '/resources/vue/router',
+            '@store': '/resources/vue/store',
+            '@admin': '/resources/vue/app/sections/admin',
+            '@models': '/resources/vue/app/sections/admin/models',
+        }
+    }
 });
