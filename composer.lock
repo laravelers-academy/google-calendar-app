@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e8c3c14ff33b199b4a0838993eb8423",
+    "content-hash": "ada195721f6548ad46409ae4e42b6421",
     "packages": [
         {
             "name": "brick/math",
@@ -1049,6 +1049,54 @@
                 }
             ],
             "time": "2023-12-03T19:50:20+00:00"
+        },
+        {
+            "name": "innoboxrr/laravel-setup",
+            "version": "4.0.26",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/innoboxrr/laravel-setup.git",
+                "reference": "28c6458d637b4dffa3ef58b2250d2c346c19be39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/innoboxrr/laravel-setup/zipball/28c6458d637b4dffa3ef58b2250d2c346c19be39",
+                "reference": "28c6458d637b4dffa3ef58b2250d2c346c19be39",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^11.0",
+                "php": "^8.0|^8.1|^8.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Innoboxrr\\LaravelSetup\\Providers\\LaravelSetupServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Innoboxrr\\LaravelSetup\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Homero Raul",
+                    "email": "h.raulvc@gmail.com"
+                }
+            ],
+            "description": "Configuración de inicial de una aplicación de laravel",
+            "support": {
+                "issues": "https://github.com/innoboxrr/laravel-setup/issues",
+                "source": "https://github.com/innoboxrr/laravel-setup/tree/4.0.26"
+            },
+            "time": "2024-09-27T03:19:58+00:00"
         },
         {
             "name": "laravel/framework",
