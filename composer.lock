@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c95ed4d4c4137f8e413d3453e3a32f18",
+    "content-hash": "9b5c062d66a0d2c317606906fca0fd9f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2012,6 +2012,57 @@
                 "source": "https://github.com/innoboxrr/aws-file-manager/tree/0.0.5"
             },
             "time": "2024-07-22T05:32:30+00:00"
+        },
+        {
+            "name": "innoboxrr/google-calendar",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/innoboxrr/google-calendar.git",
+                "reference": "518ab1e6135d9297a1ca61c72ac06edc07eddfd6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/innoboxrr/google-calendar/zipball/518ab1e6135d9297a1ca61c72ac06edc07eddfd6",
+                "reference": "518ab1e6135d9297a1ca61c72ac06edc07eddfd6",
+                "shasum": ""
+            },
+            "require-dev": {
+                "innoboxrr/larapack-generator": "^5.0",
+                "orchestra/testbench": "^9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Innoboxrr\\GoogleCalendar\\Providers\\AppServiceProvider",
+                        "Innoboxrr\\GoogleCalendar\\Providers\\AuthServiceProvider",
+                        "Innoboxrr\\GoogleCalendar\\Providers\\EventServiceProvider",
+                        "Innoboxrr\\GoogleCalendar\\Providers\\RouteServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Innoboxrr\\GoogleCalendar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Homero Raul",
+                    "email": "h.raulvc@gmail.com"
+                }
+            ],
+            "description": "Paquete para la administración del calendario de Google desde tu aplicación de Laravel",
+            "support": {
+                "issues": "https://github.com/innoboxrr/google-calendar/issues",
+                "source": "https://github.com/innoboxrr/google-calendar/tree/0.0.1"
+            },
+            "time": "2024-09-27T04:25:57+00:00"
         },
         {
             "name": "innoboxrr/larapack-generator",

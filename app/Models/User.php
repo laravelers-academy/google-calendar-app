@@ -6,10 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Innoboxrr\GoogleCalendar\Support\Traits\HasGoogleCalendarSetup;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, 
+        Notifiable, 
+        HasGoogleCalendarSetup;
 
     /**
      * The attributes that are mass assignable.
@@ -43,5 +46,10 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function isAdmin()
+    {
+        return true;
     }
 }
