@@ -74,7 +74,9 @@
         ],
         "smlink": [
             "rm -rf vendor\\innoboxrr\\google-calendar",
-            "cd vendor\\innoboxrr && mklink /D google-calendar ..\\..\\..\\..\\innoboxrr\\packages\\google-calendar"
+            "rm -rf vendor\\innoboxrr\\larapack-generator",
+            "cd vendor\\innoboxrr && mklink /D google-calendar ..\\..\\..\\..\\innoboxrr\\packages\\google-calendar",
+            "cd vendor\\innoboxrr && mklink /D larapack-generator ..\\..\\..\\..\\innoboxrr\\packages\\larapack-generator"
         ]
     },
     "extra": {

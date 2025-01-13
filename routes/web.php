@@ -15,14 +15,10 @@ use Illuminate\Support\Facades\Route;
     });
 
     Route::get('google/callback', function (Request $request){
-        $user = \App\Models\User::find(1); // Hardcoded user id
-        Auth::login($user);
         return GoogleCalendarSetup::callback($request->code);
     });
 
     Route::get('google/events', function (){
-        $user = \App\Models\User::find(1); // Hardcoded user id
-        Auth::login($user);
         return response()->json(Calendar::getEvents());
     });
 
